@@ -1,0 +1,9 @@
+server:
+  port: 8090
+
+spring:
+  data:
+    mongodb:
+      database: course-participant
+      host: localhost
+      port: 27017
