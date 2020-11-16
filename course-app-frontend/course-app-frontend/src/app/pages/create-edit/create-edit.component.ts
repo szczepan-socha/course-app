@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { Participant } from '../../model/participant.model';
 import { ParticipantService } from '../../service/participant.service';
-import { Location, ɵPLATFORM_WORKER_APP_ID} from '@angular/common';
+import { Location } from '@angular/common';
 import { ActivatedRoute, Router} from '@angular/router';
 
 enum OperationEnum {
@@ -35,7 +35,9 @@ export class CreateEditComponent implements OnInit {
   
 
   //CREATE, EDIT, READ setting
+    this.setMode();
 
+    this.prepareForm();
   
 
   }

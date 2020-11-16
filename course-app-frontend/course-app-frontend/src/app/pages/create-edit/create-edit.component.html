@@ -1,1 +1,44 @@
-<p>create-edit works!</p>
+<app-inner-header></app-inner-header>
+
+<form [formGroup]="participantForm">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="firstName">First name</label>
+      <input type="text" class="form-control" formControlName="firstName" id="firstName" placeholder="First name"
+        [class.is-invalid]="isValid('firstName')">
+      <div class="invalid-feedback" *ngIf="isValid('firstName')">
+        First name is invalid.
+      </div>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="lastName">Last name</label>
+      <input type="text" class="form-control" formControlName="lastName" id="lastName" placeholder="Last name"
+        [class.is-invalid]="isValid('lastName')">
+      <div class="invalid-feedback" *ngIf="isValid('lastName')">
+        Last name is invalid.
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="pesel">PESEL</label>
+    <input type="text" class="form-control" formControlName="pesel" id="pesel" placeholder="PESEL"
+      [class.is-invalid]="isValid('pesel')">
+    <div class="invalid-feedback" *ngIf="isValid('pesel')">
+      PESEL is invalid.
+    </div>
+  </div>
+
+  <div *ngIf="mode !== 'READ'" class="float-right">
+    <button [disabled]="!participantForm.valid" type="submit" class="btn btn-primary" (click)="save(participantForm.value)">
+      {{ mode === 'CREATE' ? 'Create' : 'Update' }}
+    </button>
+  </div>
+</form>
+
+<div class="mt-5">
+  <p>Form value: {{ participantForm.value | json }}</p>
+  <p>Form valid: {{ participantForm.valid }}</p>
+  <p>Form PESEL errors: {{ participantForm.controls['pesel'].errors | json }}</p>
+  <p>Form dirty: {{ participantForm.dirty }}</p>
+  <p>Form touched: {{ participantForm.touched }}</p>
+</div>

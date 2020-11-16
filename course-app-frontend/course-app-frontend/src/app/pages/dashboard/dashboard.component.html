@@ -1,1 +1,10 @@
-<p>dashboard works!</p>
+<h1>Dashboard</h1>
+
+<div class="username" *ngIf="username$ | async as username">
+  {{ username }}
+</div>
+
+<div class="menu">
+  <button class="btn btn-primary" (click)="goToParticipantsListPage()">Go to participants list</button>
+  <button class="btn btn-danger" (click)="logout()">Logout</button>
+</div>
