@@ -1,1 +1,14 @@
-<p>login works!</p>
+<form [formGroup]="loginForm">
+    <div class="form-group">
+      <label for="exampleInputUserName">Username</label>
+      <input type="email" formControlName="username" class="form-control" id="exampleInputUserName" placeholder="Username">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword">Password</label>
+      <input type="password" formControlName="password" class="form-control" id="exampleInputPassword" placeholder="Password">
+    </div>
+  
+    <button type="submit" class="btn btn-primary" (click)="submit()">Submit</button>
+  
+    <div *ngIf="formSubmitted && !(isUserAuthenticated$ | async)" class="error text-danger">Login failed</div>
+  </form>
