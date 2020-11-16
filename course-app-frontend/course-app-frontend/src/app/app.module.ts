@@ -23,7 +23,7 @@ import { AuthState } from './shared/state/auth.state';
 
 
 import { NavigationHandler } from './shared/handler/navigation.handler';
-import { SSL_OP_DONT_INSERT_EMPTY_FRAGMENTS } from 'constants';
+
 
 const states = [AuthState];
 

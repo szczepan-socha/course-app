@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Actions, ofActionDispatched, ofActionCompleted } from '@ngxs/store';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Logout, Login } from '../state/auth/auth.actions';
+import { Logout, Login } from '../state/auth.actions';
 
 @Injectable({
   providedIn: 'root',
